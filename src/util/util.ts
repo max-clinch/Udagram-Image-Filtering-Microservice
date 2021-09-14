@@ -11,14 +11,15 @@ import Jimp = require('Jimp');
 export async function filterImageFromURL(inputURL: string): Promise<string>{
     return new Promise( async resolve => {
         const photo = await Jimp.read(inputURL);
-        const outpath = '/tmp/filtered.'+Math.floor(Math.random() * 2000)+'.jpg';
-        await photo
-        .resize(256, 256) // resize
-        .quality(60) // set JPEG quality
-        .greyscale() // set greyscale
-        .write(__dirname+outpath, (img: any)=>{
-            resolve(__dirname+outpath);
-        });
+        var random = Math.floor(Math.random() * 2000);
+        const outpath = `/tmp/filtered. ${random} .jpg`;
+        photo
+            .resize(256, 256) // resize
+            .quality(60) // set JPEG quality
+            .greyscale() // set greyscale
+            .write(__dirname + outpath, (img: any) => {
+                resolve(__dirname + outpath);
+            });
     });
 }
 
