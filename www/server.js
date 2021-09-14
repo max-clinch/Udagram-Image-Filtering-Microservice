@@ -41,21 +41,16 @@ const url = require('url');
     //! END @TODO1
     app.get("/filteredimage/", (req, res) => __awaiter(this, void 0, void 0, function* () {
         let { image_url } = req.query;
-        
         if (!image_url) {
             return res.status(400).send("Missing image URL.");
         }
-        
         let parsedURL = url.parse(image_url, true);
-        l 
         if (!parsedURL.protocol || !parsedURL.slashes || !parsedURL.hostname || !parsedURL.pathname) {
             return res.status(400).send("Malformed URL.");
         }
-        
         if (jimpSuportedList.indexOf(parsedURL.pathname.split(".")[1]) === -1) {
             return res.status(415).send("Image extension is not supported");
         }
-       
         let filteredImageURI = yield util_1.filterImageFromURL(image_url);
         res.status(200).sendFile(filteredImageURI);
         res.on('finish', () => util_1.deleteLocalFiles([filteredImageURI]));

@@ -25,7 +25,7 @@ function filterImageFromURL(inputURL) {
         return new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
             const photo = yield Jimp.read(inputURL);
             const outpath = '/tmp/filtered.'+Math.floor(Math.random() * 2000)+'.jpg';
-            yield photo
+            photo
                 .resize(256, 256) // resize
                 .quality(60) // set JPEG quality
                 .greyscale() // set greyscale

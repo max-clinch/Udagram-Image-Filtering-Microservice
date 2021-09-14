@@ -28,6 +28,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@types/angular": "^1.8.2",
     "express": "^4.17.1",
     "jimp": "^0.6.4"
   }
