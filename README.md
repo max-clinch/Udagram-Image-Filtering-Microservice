@@ -40,5 +40,4 @@ Add your own domain name and have it point to the running services (try adding a
 > !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
 
 ### Comment
-The public jpg picture is
-The elstic beanstalk URL is "
+The elstic beanstalk URL is "https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/environment/dashboard?applicationName=udagra-mawelldev&environmentId=e-cwu2hzubuh"
